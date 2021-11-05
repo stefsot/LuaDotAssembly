@@ -2,7 +2,7 @@
 ## Lua 5.2 assembler and dissambler in a compact and single class file written in C#
 
 LuaDotAssembly provides a simple and compact object-oriented API for serializing, manipulating and deserializing Lua 5.2 bytecode.
-It targeta the official bytecode as specified by https://www.lua.org/ and therefore doesn't work for LuaJIT bytecode.
+It targets the official bytecode as specified by https://www.lua.org/ and therefore doesn't work for LuaJIT bytecode.
 
 The code can be modified to support both Lua 5.1 and Lua 5.3 as the differences are very minor but a generic assembler for Lua 5.X is outside the scope of this project.
 
@@ -63,4 +63,4 @@ asm.EntryPoint.Constants[0].Value = "hi"; // in lua string constants as represen
 asm.EntryPoint.Constants[0].Value = new object();
 ```
 
-It is advised to replace constants using the _ToLuaConstant_ extension method to avoid any mistakes. If you need to manually change the _Value_ field of a constant you have to use values of same types.
+It is advised to replace constants using the _ToLuaConstant_ extension method to avoid any mistakes. If you need to manually change the _Value_ property of a constant make sure to use the correct .Net type.
